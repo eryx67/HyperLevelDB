@@ -209,13 +209,13 @@ db_bench_tree_db_SOURCES = doc/bench/db_bench_tree_db.cc $(TESTUTIL)
 db_bench_tree_db_LDADD = -lkyotocabinet
 
 leveldbutil_SOURCES = db/leveldb_main.cc
-leveldbutil_LDADD = libhyperleveldb.la -lpthread
+leveldbutil_LDADD = libhyperleveldb.la -lpthread $(LDFLAGS)
 
 leveldb_dump_all_SOURCES = leveldb-dump-all.cc
 leveldb_dump_all_LDADD = libhyperleveldb.la -lpthread
 
 leveldb_verify_SOURCES = leveldb-verify.cc
-leveldb_verify_LDADD = libhyperleveldb.la -lpthread
+leveldb_verify_LDADD = libhyperleveldb.la -lpthread $(LDFLAGS)
 
 autocompact_test_SOURCES = db/autocompact_test.cc $(TESTHARNESS)
 autocompact_test_LDADD = libhyperleveldb.la -lpthread
